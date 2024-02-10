@@ -24,14 +24,14 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(20.0),
               child: Column(children: [
                 logoWidget("lib/images/logo.png"),
-                SizedBox(height: 5,),
-                Text("Login to Shape Shift",
+                const SizedBox(height: 5,),
+                const Text("Login to Shape Shift",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
                 textFieldWidget("Enter email here", Icons.person_outline, false, _emailTextController),
-                SizedBox(height: 40,),
+                const SizedBox(height: 40,),
                 textFieldWidget("Enter password here", Icons.lock_outline, true, _passwordTextController),
-                SizedBox(height: 40,),
+                const SizedBox(height: 40,),
                 reusableButton(context, true, () {})
                 ]),
             )
@@ -40,4 +40,21 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  Row signUpOption() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text("Dont have an account?",
+        style: TextStyle(color: Colors.white))
+        // GestureDetector(
+        //   onTap: () {
+        //     Navigator.push(context,
+        //       MaterialPageRoute(builder: (context) => SignUpPage()));
+        //   },
+        // )
+      ],
+    );
+  }
+
 }
