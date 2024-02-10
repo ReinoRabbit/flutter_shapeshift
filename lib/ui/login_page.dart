@@ -1,49 +1,26 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_shapeshift/components/my_textfield.dart';
+import 'package:flutter_shapeshift/components/logo_image.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Colors.grey[200],
-    body: SafeArea(
-      child: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 50),
-            //--logo
-            const Icon(
-              Icons.lock,
-              size: 100,
-            ),
-            const SizedBox(height: 50), //just white spacing
-            //--welcome text
-            Text(
-              'Welcome to Shape Shift!',
-              style: TextStyle(color: Colors.grey[700], fontSize: 20,),
-            ),
-            const SizedBox(height: 25),
-            //--username
-            // MyTextField(
-            //   controller: ,
-            //   hintText: , ---------------checkpoint
-            //   obscureText: ,
-            // ),
-            //--password
-            //MyTextField(),
-            //--forgot password
-
-            //--sign in btn
-        
-            //--other sign in section
-        
-          ],
-        ),
-      ),
-    ),
-  );
+  @override
+  State<LoginPage> createState() => _LoginPageState();
 }
 
+class _LoginPageState extends State<LoginPage> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: Colors.white,
+          child: Center(
+            child: Column(children: [logoWidget("lib/images/logo.png")])
+            
+          ),
+        ),
+      ),
+    );
+  }
 }
