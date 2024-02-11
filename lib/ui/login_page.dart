@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shapeshift/components/button_reuseable.dart';
 import 'package:flutter_shapeshift/components/logo_image.dart';
 import 'package:flutter_shapeshift/components/text_field.dart';
+import 'package:flutter_shapeshift/ui/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,8 +12,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _passwordTextController = TextEditingController();
-  TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
+  final TextEditingController _emailTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,8 +32,9 @@ class _LoginPageState extends State<LoginPage> {
                 textFieldWidget("Enter email here", Icons.person_outline, false, _emailTextController),
                 const SizedBox(height: 40,),
                 textFieldWidget("Enter password here", Icons.lock_outline, true, _passwordTextController),
-                const SizedBox(height: 40,),
-                reusableButton(context, true, () {})
+                const SizedBox(height: 30,),
+                reusableButton(context, true, () {}),
+                signUpOption()
                 ]),
             )
           ),
@@ -45,14 +47,17 @@ class _LoginPageState extends State<LoginPage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Dont have an account?",
-        style: TextStyle(color: Colors.white))
-        // GestureDetector(
-        //   onTap: () {
-        //     Navigator.push(context,
-        //       MaterialPageRoute(builder: (context) => SignUpPage()));
-        //   },
-        // )
+        const Text("Dont have an account?  ",
+          style: TextStyle(color: Colors.black)),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignUpPage())));
+          },
+          child: const Text(
+            "Sign Up",
+            style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+          ),
+        )
       ],
     );
   }

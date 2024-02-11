@@ -8,11 +8,6 @@ Container reusableButton (BuildContext context, bool isLogin, Function onTap) {
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
     child: ElevatedButton(
       onPressed: () { onTap();},
-      child: Text( isLogin ? 'LOGIN' : 'SIGN UP',
-      style: const TextStyle(
-        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16
-        ),
-      ),
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.pressed)) {
@@ -22,6 +17,11 @@ Container reusableButton (BuildContext context, bool isLogin, Function onTap) {
         }),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+        ),
+      ),
+      child: Text( isLogin ? 'LOGIN' : 'SIGN UP',
+      style: const TextStyle(
+        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16
         ),
       ),
     ),
