@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shapeshift/components/button_reuseable.dart';
 import 'package:flutter_shapeshift/components/logo_image.dart';
 import 'package:flutter_shapeshift/components/text_field.dart';
+import 'package:flutter_shapeshift/ui/dashboard_page.dart';
 import 'package:flutter_shapeshift/ui/login_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -33,7 +34,9 @@ class _SignUpPageState extends State<SignUpPage> {
                 const SizedBox(height: 40,),
                 textFieldWidget("Enter password here", Icons.lock_outline, true, _passwordTextController),
                 const SizedBox(height: 30,),
-                reusableButton(context, false, () {}),
+                reusableButton(context, false, () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage(),));
+                }),
                 loginOption()
                 ]),
             )
