@@ -35,7 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 textFieldWidget("Enter password here", Icons.lock_outline, true, _passwordTextController),
                 const SizedBox(height: 30,),
                 reusableButton(context, false, () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardPage(),));
                 }),
                 loginOption()
                 ]),
