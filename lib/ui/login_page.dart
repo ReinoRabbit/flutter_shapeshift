@@ -24,21 +24,23 @@ class _LoginPageState extends State<LoginPage> {
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(children: [
-                logoWidget("lib/images/logo.png"),
-                const SizedBox(height: 5,),
-                const Text("Login to Shape Shift",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                const SizedBox(height: 50,),
-                textFieldWidget("Enter email here", Icons.person_outline, false, _emailTextController),
-                const SizedBox(height: 40,),
-                textFieldWidget("Enter password here", Icons.lock_outline, true, _passwordTextController),
-                const SizedBox(height: 30,),
-                reusableButton(context, true, () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardPage(),));
-                }),
-                signUpOption()
-                ]),
+              child: SingleChildScrollView(
+                child: Column(children: [
+                  logoWidget("lib/images/logo.png"),
+                  const SizedBox(height: 5,),
+                  const Text("Login to Shape Shift",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                  const SizedBox(height: 50,),
+                  textFieldWidget("Enter email here", Icons.person_outline, false, _emailTextController),
+                  const SizedBox(height: 40,),
+                  textFieldWidget("Enter password here", Icons.lock_outline, true, _passwordTextController),
+                  const SizedBox(height: 30,),
+                  reusableButton(context, true, () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardPage(),));
+                  }),
+                  signUpOption()
+                  ]),
+              ),
             )
           ),
         ),
