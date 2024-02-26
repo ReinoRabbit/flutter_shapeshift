@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "222625269630",
+    "project_id": "shape-shift-83dab",
+    "storage_bucket": "shape-shift-83dab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222625269630:android:c4a91b907a375a7ccf552f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_shapeshift"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwyI5wQwVRjsnp1qNBvfEqEZ2JAsBoJEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
